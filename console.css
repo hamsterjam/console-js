@@ -1,0 +1,27 @@
+#console {
+   border: 1px solid black;
+   padding: 5px
+}
+
+.message {
+   font-size: 15pt;
+   margin: 3px;
+   padding: 3px;
+   background-color: #cccccc;
+}
+
+.log {
+}
+
+.info {
+   color: blue;
+}
+
+.warn {
+   color: #ffff22;
+}
+
+.error {
+   color: red;
+}
+
