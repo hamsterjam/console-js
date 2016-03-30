@@ -43,6 +43,7 @@
 }
 
 .return {
+   color: #737373;
    font-style: italic;
    background-image: url('return.png');
    background-repeat: no-repeat;
