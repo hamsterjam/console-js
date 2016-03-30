@@ -12,6 +12,7 @@
    margin-bottom: 4px;
    padding: 5px;
    background-color: #dddddd;
+   max-height: 999999999px;
 }
 
 .log {
