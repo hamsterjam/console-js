@@ -45,14 +45,12 @@
       var div = document.createElement("DIV");
       div.className = className + " message";
       div.appendChild(document.createTextNode(str));
-      consoleDiv.appendChild(div);
+      consoleDiv.appendChild(div);;;
 
       var spacer = document.createElement("DIV");
       spacer.className = "spacer";
       spacer.appendChild(document.createElement("BR"));
       consoleDiv.appendChild(spacer);
-
-      document.body.scrollTop = document.body.scrollHeight;
    }
 
    // Hijack log
@@ -81,8 +79,14 @@
 })();
 
 document.addEventListener('DOMContentLoaded', function() {
-   var con = document.createElement("DIV");
-   con.id = "console";
-   document.body.appendChild(con);
+   var consoleDiv = document.createElement("DIV");
+   consoleDiv.id = "console";
+
+   var observer = new MutationObserver(function() {
+      document.body.scrollTop = document.body.scrollHeight;
+   });
+   observer.observe(consoleDiv, {childList: true});
+
+   document.body.appendChild(consoleDiv);
 });
 
