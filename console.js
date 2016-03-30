@@ -98,7 +98,13 @@
       inButt.id = "console-button";
 
       var doInput = function() {
-         var ret = eval.call(this, inText.value);
+         appendInDiv(inText.value, "request");
+         try {
+            var ret = eval.call(this, inText.value);
+         }
+         catch (e) {
+            console.error(e.toString());
+         }
          if (ret !== undefined) appendInDiv(ret, "return");
          inText.value = '';
       }
