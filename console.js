@@ -20,7 +20,10 @@
 
       var str = '';
 
-      if (input instanceof Array) {
+      if (input === undefined) {
+         str = 'undefined';
+      }
+      else if (input instanceof Array) {
          str += '[';
          for (let i=0; i < input.length; ++i) {
             str += process(input[i]) + ", ";
@@ -76,17 +79,39 @@
       appendInDiv(args[0], "error");
       oldError.call(console, ...args);
    }
-})();
 
-document.addEventListener('DOMContentLoaded', function() {
-   var consoleDiv = document.createElement("DIV");
-   consoleDiv.id = "console";
+   document.addEventListener('DOMContentLoaded', function() {
+      var consoleDiv = document.createElement("DIV");
+      consoleDiv.id = "console";
 
-   var observer = new MutationObserver(function() {
-      document.body.scrollTop = document.body.scrollHeight;
+      // Auto scroll
+      var observer = new MutationObserver(function() {
+         document.body.scrollTop = document.body.scrollHeight;
+      });
+      observer.observe(consoleDiv, {childList: true});
+
+      // Input bar
+      var inText = document.createElement("INPUT");
+      var inButt = document.createElement("BUTTON");
+
+      inText.id = "console-input";
+      inButt.id = "console-button";
+
+      function doInput() {
+         //This is slightly naiive, declaring variables won't work
+         appendInDiv(eval(inText.value), "return");
+         inText.value = '';
+      }
+
+      inButt.addEventListener('click', doInput);
+      inText.addEventListener('keydown', function(e) {
+         if (e.keyCode === 13) doInput();
+      });
+
+      consoleDiv.appendChild(inText);
+      consoleDiv.appendChild(inButt);
+
+      document.body.appendChild(consoleDiv);
    });
-   observer.observe(consoleDiv, {childList: true});
 
-   document.body.appendChild(consoleDiv);
-});
-
+})();

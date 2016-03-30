@@ -1,4 +1,33 @@
 #console {
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   padding-top: 4px;
+   padding-bottom: 50px;
+   padding-left: 8px;
+   padding-right: 8px;
+}
+
+#console-input {
+   position: absolute;
+   bottom: 8px;
+   left: 8px;
+   box-sizing: border-box;
+   height: 35px;
+   width: calc(100% - 59px);
+   font-size: 25px;
+}
+
+#console-button {
+   position: absolute;
+   bottom: 8px;
+   right: 8px;
+   box-sizing: border-box;
+   padding: 0px;
+   margin: 0px;
+   height: 35px;
+   width: 35px;
+   font-size: 27px;
 }
 
 .message {
@@ -11,6 +40,14 @@
 }
 
 .log {
+}
+
+.return {
+   font-style: italic;
+   background-image: url('return.png');
+   background-repeat: no-repeat;
+   background-position: 5px 5px;
+   padding-left: 40px
 }
 
 .info {
