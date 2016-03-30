@@ -14,14 +14,16 @@
 }
 
 .info {
-   color: blue;
+   color: #5555bb;
 }
 
 .warn {
-   color: #ffff22;
+   color: #666600;
+   background-color: #f0f088;
 }
 
 .error {
-   color: red;
+   color: #cc0000;
+   background-color: #ffcccc;
 }
 
