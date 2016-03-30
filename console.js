@@ -5,16 +5,19 @@
    var oldError = console.error;
 
    function appendInDiv(str, className) {
+      var consoleDiv = document.getElementById('console');
+
       var div = document.createElement("DIV");
       div.className = className + " message";
       div.appendChild(document.createTextNode(str));
-      document.getElementById('console').appendChild(div);
+      consoleDiv.appendChild(div);
 
       var spacer = document.createElement("DIV");
       spacer.className = "spacer";
       spacer.appendChild(document.createElement("BR"));
-      document.getElementById('console').appendChild(spacer);
+      consoleDiv.appendChild(spacer);
 
+      document.body.scrollTop = document.body.scrollHeight;
    }
 
    // Hijack log
