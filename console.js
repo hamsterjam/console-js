@@ -97,9 +97,9 @@
       inText.id = "console-input";
       inButt.id = "console-button";
 
-      function doInput() {
-         //This is slightly naiive, declaring variables won't work
-         appendInDiv(eval(inText.value), "return");
+      var doInput = function() {
+         var ret = eval.call(this, inText.value);
+         if (ret !== undefined) appendInDiv(ret, "return");
          inText.value = '';
       }
 
