@@ -1,13 +1,15 @@
 #console {
    border: 1px solid black;
-   padding: 5px
+   padding-left: 8px;
+   padding-right: 8px;
 }
 
 .message {
-   font-size: 15pt;
-   margin: 3px;
-   padding: 3px;
-   background-color: #cccccc;
+   font-size: 30px;
+   margin-top: 8px;
+   margin-bottom: 8px;
+   padding: 5px;
+   background-color: #dddddd;
 }
 
 .log {
@@ -15,15 +17,27 @@
 
 .info {
    color: #5555bb;
+   background-image: url('info.png');
+   background-repeat: no-repeat;
+   background-position: 6px 6px;
+   padding-left: 40px
 }
 
 .warn {
-   color: #666600;
+   color: #444400;
    background-color: #f0f088;
+   background-image: url('warn.png');
+   background-repeat: no-repeat;
+   background-position: 6px 6px;
+   padding-left: 40px
 }
 
 .error {
    color: #cc0000;
    background-color: #ffcccc;
+   background-image: url('error.png');
+   background-repeat: no-repeat;
+   background-position: 6px 6px;
+   padding-left: 40px
 }
 
