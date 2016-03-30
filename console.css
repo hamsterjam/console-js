@@ -2,12 +2,14 @@
    border: 1px solid black;
    padding-left: 8px;
    padding-right: 8px;
+   padding-top: 4px;
+   padding-bottom: 4px;
 }
 
 .message {
    font-size: 27px;
-   margin-top: 8px;
-   margin-bottom: 8px;
+   margin-top: 4px;
+   margin-bottom: 4px;
    padding: 5px;
    background-color: #dddddd;
 }
@@ -17,12 +19,10 @@
 
 .info {
    color: #5555bb;
-   /**/
    background-image: url('info.png');
    background-repeat: no-repeat;
    background-position: 5px 5px;
    padding-left: 40px
-   /**/
 }
 
 .warn {
@@ -43,3 +43,6 @@
    padding-left: 40px
 }
 
+.spacer {
+   font-size: 0px;
+}

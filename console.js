@@ -9,6 +9,12 @@
       div.className = className + " message";
       div.appendChild(document.createTextNode(str));
       document.getElementById('console').appendChild(div);
+
+      var spacer = document.createElement("DIV");
+      spacer.className = "spacer";
+      spacer.appendChild(document.createElement("BR"));
+      document.getElementById('console').appendChild(spacer);
+
    }
 
    // Hijack log
