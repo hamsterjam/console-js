@@ -4,7 +4,42 @@
    var oldWarn = console.warn;
    var oldError = console.error;
 
-   function appendInDiv(str, className) {
+   function appendInDiv(input, className) {
+      function process(item) {
+         if (typeof item === "string") {
+            return '"' + item + '"';
+         }
+         else if (item instanceof Array) {
+            return "Array["+item.length+"]";
+         }
+         else if (item.toString() === "[object Object]"){
+            return "Object";
+         }
+         return item.toString();
+      }
+
+      var str = '';
+
+      if (input instanceof Array) {
+         str += '[';
+         for (let i=0; i < input.length; ++i) {
+            str += process(input[i]) + ", ";
+         }
+         if (str.length > 1) str = str.slice(0, -2);
+         str += ']';
+      }
+      else if (input.toString() === "[object Object]") {
+         str += 'Object {';
+         for (let prop in input) if (input.hasOwnProperty(prop)) {
+            str += prop + ": " + process(input[prop]) + ", ";
+         }
+         if (str.length > 8) str = str.slice(0, -2);
+         str += '}';
+      }
+      else {
+         str = input.toString();
+      }
+
       var consoleDiv = document.getElementById('console');
 
       var div = document.createElement("DIV");
