@@ -48,7 +48,7 @@
       var div = document.createElement("DIV");
       div.className = className + " message";
       div.appendChild(document.createTextNode(str));
-      consoleDiv.appendChild(div);;;
+      consoleDiv.appendChild(div);
 
       var spacer = document.createElement("DIV");
       spacer.className = "spacer";
@@ -78,7 +78,7 @@
    console.error = function(...args) {
       appendInDiv(args[0], "error");
       oldError.call(console, ...args);
-   }
+   };
 
    document.addEventListener('DOMContentLoaded', function() {
       var consoleDiv = document.createElement("DIV");
@@ -98,16 +98,17 @@
       inButt.id = "console-button";
 
       var doInput = function() {
+         var ret;
          appendInDiv(inText.value, "request");
          try {
-            var ret = eval.call(this, inText.value);
+            ret = eval.call(this, inText.value);
          }
          catch (e) {
             console.error(e.toString());
          }
          if (ret !== undefined) appendInDiv(ret, "return");
          inText.value = '';
-      }
+      };
 
       inButt.addEventListener('click', doInput);
       inText.addEventListener('keydown', function(e) {
@@ -121,3 +122,4 @@
    });
 
 })();
+
