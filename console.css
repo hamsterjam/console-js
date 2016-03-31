@@ -2,39 +2,38 @@
    position: absolute;
    top: 0px;
    left: 0px;
-   width: calc(100% - 16px);
-   padding-top: 4px;
-   padding-bottom: 50px;
-   padding-left: 8px;
-   padding-right: 8px;
+   width: calc(100% - 8px);
+   padding-top: 2px;
+   padding-bottom: 42px;
+   padding-left: 4px;
+   padding-right: 4px;
 }
 
 #console-input {
    position: absolute;
-   bottom: 8px;
-   left: 8px;
+   bottom: 4px;
+   left: 4px;
    box-sizing: border-box;
    height: 35px;
-   width: calc(100% - 59px);
+   width: calc(100% - 47px);
    font-size: 25px;
 }
 
 #console-button {
    position: absolute;
-   bottom: 8px;
-   right: 8px;
+   bottom: 4px;
+   right: 4px;
    box-sizing: border-box;
    padding: 0px;
    margin: 0px;
    height: 35px;
    width: 35px;
-   font-size: 27px;
 }
 
 .message {
    font-size: 27px;
-   margin-top: 4px;
-   margin-bottom: 4px;
+   margin-top: 2px;
+   margin-bottom: 2px;
    padding: 5px;
    background-color: #dddddd;
    max-height: 999999999px;
@@ -46,6 +45,8 @@
 .request {
    color: #737373;
    font-style: italic;
+   font-size: 25px;
+   min-height: 30px;
    background-image: url('request.png');
    background-repeat: no-repeat;
    background-position: 5px 5px;
